@@ -23,8 +23,11 @@ Users should be able to:
 
 ### Screenshot
 
-![Mobile View](/screenshot/mobile-view.png.jpg)
-![Desktop View](/screenshot/desktop-view.png-view.png.jpg)
+#### Mobile View
+![](/screenshot/mobile-view.png)
+
+#### Desktop View
+![](/screenshot/desktop-view.png)
 
 The above screenshots show how the website looks on both mobile and desktop screens. The design is responsive and adjusts to different screen sizes using the mobile-first approach and flexbox layout. The use of colors, typography, and layout elements is consistent throughout the website, giving it a professional and cohesive look.
 
