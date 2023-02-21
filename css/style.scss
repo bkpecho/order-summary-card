@@ -1,0 +1,169 @@
+/* 
+
+VARIABLES
+
+*/
+
+// ## Colors
+
+// ### Primary
+
+$clr-pale-blue: hsl(225, 100%, 94%);
+$clr-bright-blue: hsl(245, 75%, 52%);
+
+// ### Neutral
+
+$clr-very-pale-blue: hsl(225, 100%, 98%);
+$clr-desaturated-blue: hsl(224, 23%, 55%);
+$clr-dark-blue: hsl(223, 47%, 23%);
+
+// ## Typography
+
+// ### Body Copy
+
+$fs-base: 16px;
+
+// ### Font
+
+$ff-primary: 'Red Hat Display', sans-serif;
+
+$fw-regular: 500;
+$fw-bold: 700;
+$fw-extra: 900;
+
+/* MIXINS */
+
+@mixin flex($direction, $gap) {
+  display: flex;
+  flex-direction: $direction;
+  gap: $gap;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: $ff-primary;
+}
+
+html {
+  font-size: $fs-base;
+}
+
+body {
+  @include flex(column, 1rem);
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  padding: 1rem;
+
+  overflow: hidden;
+  background-color: $clr-pale-blue;
+
+  background-image: url(/images/pattern-background-mobile.svg);
+  background-repeat: repeat-x;
+}
+
+@media screen and (min-width: 600px) {
+  body {
+    background-image: url(/images/pattern-background-desktop.svg);
+  }
+}
+
+.component {
+  @include flex(column, 0);
+  max-width: 375px;
+  text-align: center;
+  border-radius: 1rem;
+  overflow: hidden;
+
+  background-color: white;
+
+  & .order {
+    @include flex(column, 1.5rem);
+    padding: 2rem;
+
+    &__image {
+      width: 100%;
+    }
+
+    &__title {
+      font-size: 1.5rem;
+      font-weight: $fw-extra;
+      color: $clr-dark-blue;
+    }
+
+    &__paragraph {
+      color: $clr-desaturated-blue;
+      line-height: 1.5rem;
+    }
+
+    & .pricing {
+      @include flex(row, 1rem);
+      position: relative;
+      align-items: center;
+      padding: 1rem;
+      border-radius: 0.5rem;
+
+      background-color: $clr-very-pale-blue;
+
+      &__details {
+        @include flex(column, 0.5rem);
+
+        &-title {
+          color: $clr-dark-blue;
+          font-weight: $fw-extra;
+        }
+
+        &-price {
+          color: $clr-desaturated-blue;
+        }
+      }
+
+      &__change {
+        position: absolute;
+        right: 1rem;
+
+        font-weight: $fw-bold;
+        color: $clr-bright-blue;
+
+        cursor: pointer;
+        &:hover {
+          text-decoration: none;
+          color: rgba($clr-bright-blue, 0.7);
+        }
+      }
+    }
+
+    &__payment {
+      background-color: $clr-bright-blue;
+      color: $clr-very-pale-blue;
+      font-weight: $fw-bold;
+      border-radius: 0.5rem;
+
+      padding: 1rem;
+      text-decoration: none;
+
+      box-shadow: 0 0.5rem 1.5rem 0 rgba($clr-bright-blue, 0.3);
+
+      cursor: pointer;
+      &:hover {
+        background-color: rgba($clr-bright-blue, 0.7);
+      }
+
+      &:active {
+        background-color: rgba($clr-bright-blue, 0.8);
+      }
+    }
+
+    &__cancel {
+      color: $clr-desaturated-blue;
+      font-weight: $fw-bold;
+      text-decoration: none;
+
+      cursor: pointer;
+      &:hover {
+        color: $clr-dark-blue;
+      }
+    }
+  }
+}
