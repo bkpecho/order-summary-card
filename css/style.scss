@@ -80,7 +80,7 @@ body {
 
   & .order {
     @include flex(column, 1.5rem);
-    padding: 2rem;
+    padding: 2.5rem;
 
     &__image {
       width: 100%;
